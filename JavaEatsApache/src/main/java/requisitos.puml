@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+actor UsuarioCliente
+actor Administrador
+rectangle Sistema {
+    UsuarioCliente --> (Registrar)
+    UsuarioCliente --> (Iniciar Sesión)
+    UsuarioCliente --> (Realizar Búsqueda)
+    UsuarioCliente --> (Seleccionar Restaurante)
+    UsuarioCliente --> (Agregar Comida al Carrito)
+    UsuarioCliente --> (Realizar Pago)
+    
+    Administrador --> (Iniciar Sesión)
+    Administrador --> (Administrar Restaurantes)
+    Administrador --> (Administrar Usuarios)
+    Administrador --> (Visualizar Ventas)
+    Administrador --> (Crear Restaurante)
+    Administrador --> (Modificar Restaurante)
+    Administrador --> (Borrar Restaurante)
+    Administrador --> (Visualizar Restaurantes)
+    Administrador --> (Visualizar Usuarios)
+    Administrador --> (Borrar Usuario)
+    
+    (Administrar Restaurantes)  <<include>> --> (Crear Restaurante)
+    (Administrar Restaurantes)  <<include>> --> (Borrar Restaurante)
+    (Administrar Restaurantes)  <<include>> --> (Modificar Restaurante)
+    (Administrar Restaurantes)  <<include>> --> (Visualizar Restaurante)
+    
+}
+@enduml
